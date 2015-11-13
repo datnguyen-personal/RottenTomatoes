@@ -22,15 +22,18 @@ PODS:
     - AFNetworking/NSURLSession
   - Alamofire (3.1.2)
   - KVNProgress (2.2.1)
+  - ReachabilitySwift (2.1)
 
 DEPENDENCIES:
   - AFNetworking
   - Alamofire (~> 3.1)
   - KVNProgress (~> 2.2)
+  - ReachabilitySwift (~> 2.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 7f317038a9710cabfa43ec56396b307b45df72ab
   Alamofire: 7c16ca65f3c7e681fd925fd7f2dec7747ff96855
   KVNProgress: 7001d2d16a2755cee5599e8e485befe056f2197b
+  ReachabilitySwift: 99bb7acceebb90b2048b4a8fd6539be96454dcb2
 
 COCOAPODS: 0.39.0

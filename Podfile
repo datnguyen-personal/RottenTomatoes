@@ -7,5 +7,6 @@ target 'RottenTomatoes' do
    pod 'Alamofire', '~>3.1'
    pod 'AFNetworking'
    pod 'KVNProgress', '~> 2.2'
+   pod 'ReachabilitySwift', '~> 2.1'
 end
 

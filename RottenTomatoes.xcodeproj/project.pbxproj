@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA64911E1BF2F2E000280BE0 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA64911D1BF2F2E000280BE0 /* MovieCell.swift */; };
 		AA6491201BF32EBA00280BE0 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA64911F1BF32EBA00280BE0 /* MovieDetailsViewController.swift */; };
+		AA83885B1BF645D600034613 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA83885A1BF645D600034613 /* Reachability.swift */; };
 		AAC0B8851BF2EC02002C158E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0B8841BF2EC02002C158E /* AppDelegate.swift */; };
 		AAC0B88A1BF2EC02002C158E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC0B8881BF2EC02002C158E /* Main.storyboard */; };
 		AAC0B88C1BF2EC02002C158E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC0B88B1BF2EC02002C158E /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		6D328AA1912D954501FB20DB /* Pods_RottenTomatoes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RottenTomatoes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA64911D1BF2F2E000280BE0 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		AA64911F1BF32EBA00280BE0 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
+		AA83885A1BF645D600034613 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = SOURCE_ROOT; };
 		AAC0B8811BF2EC02002C158E /* RottenTomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenTomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC0B8841BF2EC02002C158E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAC0B8891BF2EC02002C158E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AA8388571BF6452400034613 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				AA83885A1BF645D600034613 /* Reachability.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		AAC0B8781BF2EC02002C158E = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +84,7 @@
 		AAC0B8831BF2EC02002C158E /* RottenTomatoes */ = {
 			isa = PBXGroup;
 			children = (
+				AA8388571BF6452400034613 /* Utility */,
 				AAC0B8991BF2EC4B002C158E /* CustomUIView */,
 				AAC0B8961BF2EC2B002C158E /* ViewControllers */,
 				AAC0B8841BF2EC02002C158E /* AppDelegate.swift */,
@@ -235,6 +246,7 @@
 				AA6491201BF32EBA00280BE0 /* MovieDetailsViewController.swift in Sources */,
 				AAC0B8851BF2EC02002C158E /* AppDelegate.swift in Sources */,
 				AAC0B8981BF2EC45002C158E /* MovieViewController.swift in Sources */,
+				AA83885B1BF645D600034613 /* Reachability.swift in Sources */,
 				AA64911E1BF2F2E000280BE0 /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

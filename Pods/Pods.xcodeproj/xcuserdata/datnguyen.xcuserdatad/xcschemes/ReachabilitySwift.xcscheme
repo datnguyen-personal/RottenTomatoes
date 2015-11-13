@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E85405E78AF38FAECDBFBA33'
-               BlueprintName = 'KVNProgress'
+               BlueprintIdentifier = '53DF9EE3A8F1A65B8FD07884'
+               BlueprintName = 'ReachabilitySwift'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'KVNProgress.framework'>
+               BuildableName = 'ReachabilitySwift.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

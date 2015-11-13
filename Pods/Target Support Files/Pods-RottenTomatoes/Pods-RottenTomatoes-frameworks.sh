@@ -87,9 +87,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-RottenTomatoes/AFNetworking.framework"
   install_framework "Pods-RottenTomatoes/Alamofire.framework"
   install_framework "Pods-RottenTomatoes/KVNProgress.framework"
+  install_framework "Pods-RottenTomatoes/ReachabilitySwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-RottenTomatoes/AFNetworking.framework"
   install_framework "Pods-RottenTomatoes/Alamofire.framework"
   install_framework "Pods-RottenTomatoes/KVNProgress.framework"
+  install_framework "Pods-RottenTomatoes/ReachabilitySwift.framework"
 fi
