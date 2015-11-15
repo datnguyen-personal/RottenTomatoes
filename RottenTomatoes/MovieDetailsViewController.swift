@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class MovieDetailsViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var synopsisLabel: UILabel!
     @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var synopsisTextView: UITextView!
     
     var movie: NSDictionary!
     
@@ -21,10 +22,14 @@ class MovieDetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         titleLabel.text = movie["title"] as? String
-        synopsisLabel.text = movie["synopsis"] as? String
+        synopsisTextView.text = movie["synopsis"] as? String
         
-        let url = NSURL (string: movie.valueForKeyPath("posters.detailed") as! String)!
-        posterImageView.setImageWithURL(url)
+        let imageURL = NSURL (string: movie.valueForKeyPath("posters.detailed") as! String)!
+        let thumbnailURL = NSURL (string: movie.valueForKeyPath("posters.thumbnail") as! String)!
+        
+        posterImageView.setImageWithURL(thumbnailURL)
+        posterImageView.setImageWithURL(imageURL)
+        
     }
 
     override func didReceiveMemoryWarning() {

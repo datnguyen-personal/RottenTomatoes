@@ -10,6 +10,8 @@
 		AA64911E1BF2F2E000280BE0 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA64911D1BF2F2E000280BE0 /* MovieCell.swift */; };
 		AA6491201BF32EBA00280BE0 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA64911F1BF32EBA00280BE0 /* MovieDetailsViewController.swift */; };
 		AA83885B1BF645D600034613 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA83885A1BF645D600034613 /* Reachability.swift */; };
+		AA83885F1BF7965B00034613 /* MovieTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA83885E1BF7965B00034613 /* MovieTabBarController.swift */; };
+		AA8388611BF7973700034613 /* DVDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8388601BF7973700034613 /* DVDViewController.swift */; };
 		AAC0B8851BF2EC02002C158E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0B8841BF2EC02002C158E /* AppDelegate.swift */; };
 		AAC0B88A1BF2EC02002C158E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC0B8881BF2EC02002C158E /* Main.storyboard */; };
 		AAC0B88C1BF2EC02002C158E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC0B88B1BF2EC02002C158E /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 		AA64911D1BF2F2E000280BE0 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		AA64911F1BF32EBA00280BE0 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		AA83885A1BF645D600034613 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = SOURCE_ROOT; };
+		AA83885E1BF7965B00034613 /* MovieTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTabBarController.swift; sourceTree = "<group>"; };
+		AA8388601BF7973700034613 /* DVDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVDViewController.swift; sourceTree = "<group>"; };
 		AAC0B8811BF2EC02002C158E /* RottenTomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenTomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC0B8841BF2EC02002C158E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAC0B8891BF2EC02002C158E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			children = (
 				AAC0B8971BF2EC45002C158E /* MovieViewController.swift */,
 				AA64911F1BF32EBA00280BE0 /* MovieDetailsViewController.swift */,
+				AA83885E1BF7965B00034613 /* MovieTabBarController.swift */,
+				AA8388601BF7973700034613 /* DVDViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -243,9 +249,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA83885F1BF7965B00034613 /* MovieTabBarController.swift in Sources */,
 				AA6491201BF32EBA00280BE0 /* MovieDetailsViewController.swift in Sources */,
 				AAC0B8851BF2EC02002C158E /* AppDelegate.swift in Sources */,
 				AAC0B8981BF2EC45002C158E /* MovieViewController.swift in Sources */,
+				AA8388611BF7973700034613 /* DVDViewController.swift in Sources */,
 				AA83885B1BF645D600034613 /* Reachability.swift in Sources */,
 				AA64911E1BF2F2E000280BE0 /* MovieCell.swift in Sources */,
 			);

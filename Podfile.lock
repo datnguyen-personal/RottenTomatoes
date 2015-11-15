@@ -26,7 +26,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - Alamofire (~> 3.1)
+  - Alamofire
   - KVNProgress (~> 2.2)
   - ReachabilitySwift (~> 2.1)
 

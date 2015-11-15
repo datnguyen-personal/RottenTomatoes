@@ -4,7 +4,7 @@
 use_frameworks!
 
 target 'RottenTomatoes' do
-   pod 'Alamofire', '~>3.1'
+   pod 'Alamofire'
    pod 'AFNetworking'
    pod 'KVNProgress', '~> 2.2'
    pod 'ReachabilitySwift', '~> 2.1'

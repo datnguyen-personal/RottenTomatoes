@@ -1,23 +1,25 @@
 //
-//  MovieViewController.swift
+//  DVDViewController.swift
 //  RottenTomatoes
 //
-//  Created by Dat Nguyen on 11/11/15.
+//  Created by Dat Nguyen on 14/11/15.
 //  Copyright © 2015 datnguyen. All rights reserved.
 //
 
 import UIKit
+import Alamofire
 import AFNetworking
 import KVNProgress
 
-class MovieViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class DVDViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var movieTableView: UITableView!
     @IBOutlet weak var errorUIView: UIView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var movieSearchBar: UISearchBar!
     
-    let dataURL = "https://coderschool-movies.herokuapp.com/movies?api_key=xja087zcvxljadsflh214"
+    
+    let dataURL = "https://coderschool-movies.herokuapp.com/dvds?api_key=xja087zcvxljadsflh214"
     
     var movies = [NSDictionary]()
     
@@ -35,7 +37,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // set up navigation controller
         navigationController?.navigationBar.barTintColor = UIColor(red: 41/255, green: 128/255, blue: 185/255, alpha: 1.0)
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]
@@ -64,6 +66,12 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
+
     @IBAction func dimissErrorBanner(sender: AnyObject) {
         dismissError()
     }
@@ -78,7 +86,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         NSNotificationCenter.defaultCenter().removeObserver(self, name: ReachabilityChangedNotification, object: nil)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -126,7 +134,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell!.contentView.superview!.backgroundColor = UIColor(red: 41/255, green: 128/255, blue: 185/255, alpha: 0.5)
     }
     
-
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         movieTableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -138,7 +146,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
@@ -164,7 +172,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
     func onRefresh() {
         fetchMovies()
     }
-
+    
     //initiate progress bar
     func showProgress(){
         var config: KVNProgressConfiguration!
@@ -177,7 +185,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         KVNProgress.setConfiguration(config)
         
-        KVNProgress.showWithStatus("Loading movies...")
+        KVNProgress.showWithStatus("Loading DVDs...")
     }
     
     //dimiss progress bar
@@ -198,7 +206,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = movieTableView.dequeueReusableCellWithIdentifier("movieCell") as! MovieCell
+        let cell = movieTableView.dequeueReusableCellWithIdentifier("dvdCell") as! MovieCell
         
         cell.selectionStyle = .None
         
@@ -213,10 +221,13 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.titleLabel.text = movie!["title"] as! String?
         cell.summaryLabel.text = movie!["synopsis"] as! String?
         //print(String(movie!.valueForKeyPath("ratings.critics_score")) + "%")
-        cell.ratingLabel.text = String(movie!.valueForKeyPath("ratings.critics_score") as! Int) + "%"
-        cell.durationLabel.text = String(movie!["runtime"] as! Int) + " mins"
+        cell.ratingLabel?.text = String(movie!.valueForKeyPath("ratings.critics_score") as! Int) + "%"
+        cell.durationLabel?.text = String(movie!["runtime"] as! Int) + " mins"
         let ratingType = movie!.valueForKeyPath("ratings.critics_rating") as! String
-        cell.ratingImageView.image = ratingIconDictionary[ratingType] as? UIImage
+        
+        if let img = ratingIconDictionary[ratingType] as? UIImage {
+            cell.ratingImageView?.image = img
+        }
         
         //insert image
         //movie.valueForKeyPath("posters.thumbnail")
@@ -224,7 +235,7 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
             let imageURLString = posters["thumbnail"] as! String
             let imageURL = NSURL(string: imageURLString)
             cell.posterImageView.setImageWithURL(imageURL!)
-        
+            
         } else {
             print("fail")
         }
@@ -250,9 +261,9 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         if errorUIView.hidden == false {
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 self.errorUIView.frame = CGRectMake(self.errorViewFrame.origin.x, self.errorViewFrame.origin.y - self.errorViewFrame.height, self.errorViewFrame.width, self.errorViewFrame.height)
-            }, completion:{
-                (value: Bool) in
-                self.errorUIView.hidden = true
+                }, completion:{
+                    (value: Bool) in
+                    self.errorUIView.hidden = true
             })
             
         }

@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        UITabBar.appearance().barTintColor = UIColor(red: 41/255, green: 128/255, blue: 185/255, alpha: 0.7)
+        UITabBar.appearance().tintColor = UIColor(red: 23/255, green: 63/255, blue: 86/255, alpha: 1)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red: 23/255, green: 63/255, blue: 86/255, alpha: 1)], forState:.Selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red: 233/255, green: 233/255, blue: 233/255, alpha: 0.7)], forState:.Normal)
+        
         return true
     }
 
